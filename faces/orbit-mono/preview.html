@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>素白刻度 · 表盘预览</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0e0e11; }
+  .stage { display: flex; align-items: center; justify-content: center; height: 100%; gap: 48px; }
+  .watch {
+    position: relative; width: 466px; height: 466px; border-radius: 50%;
+    overflow: hidden; background: #000; box-shadow: 0 0 0 10px #1a1a1e, 0 24px 60px rgba(0,0,0,.6);
+  }
+  .watch img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+  .watch .rot { transform-origin: 50% 50%; }
+  .digital {
+    position: absolute; left: 0; top: 279.6px; width: 100%; text-align: center;
+    font-size: 52.2px; color: #181A20;
+    font-family: "Segoe UI Light", "Bahnschrift Light", Arial, sans-serif;
+    letter-spacing: .02em;
+  }
+  .sub {
+    position: absolute; left: 0; top: 347.2px; width: 100%; text-align: center;
+    font-size: 21.9px; color: #6E727C;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+  .hint { color: #6b6b73; font: 14px/1.7 "Segoe UI", sans-serif; max-width: 260px; }
+  .hint b { color: #ccc; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="watch">
+    <img src="src/watch3003/assets/dial.png">
+    <img src="src/watch3003/assets/digital_plate.png">
+    <img id="hour" class="rot" src="src/watch3003/assets/hand_hour.png">
+    <img id="minute" class="rot" src="src/watch3003/assets/hand_minute.png">
+    <img id="second" class="rot" src="src/watch3003/assets/hand_second.png">
+    <img src="src/watch3003/assets/hub.png">
+    <div class="digital" id="digital">10:09</div>
+    <div class="sub" id="sub">11.08  SAT</div>
+  </div>
+  <div class="hint">
+    <b>素白刻度</b><br>
+    包名 com.orbit.watch<br>
+    目录 watch3003<br><br>
+    这就是 index.ux 的布局逻辑：<br>
+    三根针各自一个整层 PNG，<br>
+    绕中心旋转 <b>rotate(Ndeg)</b>，<br>
+    数字与日期由 JS 每秒刷新。<br><br>
+    指针在走 = 布局正确。
+  </div>
+</div>
+<script>
+  const pad = n => (n < 10 ? '0' + n : '' + n);
+  const WD = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const $h = document.getElementById('hour');
+  const $m = document.getElementById('minute');
+  const $s = document.getElementById('second');
+  const $d = document.getElementById('digital');
+  const $sub = document.getElementById('sub');
+  function tick() {
+    const d = new Date();
+    const h = d.getHours(), m = d.getMinutes(), s = d.getSeconds();
+    $h.style.transform = 'rotate(' + ((h % 12) * 30 + m * 0.5) + 'deg)';
+    $m.style.transform = 'rotate(' + (m * 6 + s * 0.1) + 'deg)';
+    $s.style.transform = 'rotate(' + (s * 6) + 'deg)';
+    $d.textContent = pad(h) + ':' + pad(m);
+    $sub.textContent = pad(d.getMonth() + 1) + '.' + pad(d.getDate()) + '  ' + WD[d.getDay()];
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
