@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Orbit 表盘作品集 · vivo 蓝河</title>
+<title>Orbit 表盘作品集 · vivo 蓝河 BlueOS</title>
 <style>
   :root { --bg:#0b0b0e; --fg:#e8eaf0; --dim:#8b8f99; --line:#1e1f25; --accent:#56d6e0; }
   * { box-sizing: border-box; }
@@ -19,94 +19,75 @@
     border:1px solid #2a3540; color:var(--accent); font-size:13px; letter-spacing:.06em;
   }
   main { max-width:1040px; margin:0 auto; padding:48px 24px 80px; }
-  .card {
-    display:flex; gap:32px; align-items:center; padding:28px 0;
-    border-bottom:1px solid var(--line);
-  }
+  .card { display:flex; gap:32px; align-items:center; padding:34px 0; border-bottom:1px solid var(--line); }
   .card:last-child { border-bottom:none; }
-  .thumb { flex:0 0 220px; display:block; }
+  .thumb { flex:0 0 200px; }
   .thumb img {
-    width:220px; height:220px; display:block; border-radius:50%;
+    width:200px; height:238px; display:block; border-radius:26px;
     box-shadow: 0 0 0 8px #17181d, 0 18px 50px rgba(0,0,0,.65);
   }
   .meta h2 { margin:0 0 8px; font-size:21px; font-weight:600; }
   .meta h2 span { margin-left:10px; font-size:13px; color:var(--dim); font-weight:400; letter-spacing:.08em; }
-  .meta p { margin:0 0 12px; color:#b9bcc5; }
+  .meta p { margin:0 0 14px; color:#b9bcc5; }
   .tags { margin-bottom:14px; }
   .tags i {
-    font-style:normal; display:inline-block; margin-right:8px; padding:2px 10px;
+    font-style:normal; display:inline-block; margin:0 8px 6px 0; padding:2px 10px;
     font-size:12px; color:var(--dim); border:1px solid #23242b; border-radius:6px;
   }
   .links a {
-    color:var(--accent); text-decoration:none; margin-right:18px; font-size:14px;
-    border-bottom:1px solid transparent;
+    display:inline-block; margin-right:14px; color:var(--accent); text-decoration:none;
+    font-size:14px; border-bottom:1px solid rgba(86,214,224,.35); padding-bottom:1px;
   }
   .links a:hover { border-bottom-color:var(--accent); }
-  footer { border-top:1px solid var(--line); padding:36px 24px; text-align:center; color:var(--dim); font-size:13px; }
-  footer code { color:#c9ccd4; }
-  @media (max-width:720px) {
-    .card { flex-direction:column; align-items:flex-start; gap:20px; }
-    .thumb img { width:180px; height:180px; }
-  }
+  footer { text-align:center; padding:36px 24px 60px; color:var(--dim); font-size:13px; border-top:1px solid var(--line); }
+  .spec { color:var(--dim); font-size:13px; margin-top:6px; }
 </style>
 </head>
 <body>
 <header>
   <h1>Orbit 表盘作品集</h1>
-  <p>vivo 蓝河（BlueOS）手表表盘 · 程序化设计 · 466×466 圆表</p>
-  <div class="badge">3 款成品 · 可运行 · 可交互预览</div>
+  <p>为 vivo WATCH GT2 打造 · 蓝河 BlueOS 原生表盘</p>
+  <div class="badge">方屏 432×514 · 蓝河 rpk</div>
 </header>
+
 <main>
+  <div class="card">
+    <div class="thumb"><img src="faces/final-dark-preview.png" alt="暗夜轨道"></div>
+    <div class="meta">
+      <h2>暗夜轨道 <span>ORBIT DARK</span></h2>
+      <p>深夜蓝黑渐变底盘，青绿色秒针点睛。立体刻度环配半透明时间底板，读时清晰又不抢指针。</p>
+      <div class="tags"><i>深色</i><i>指针表盘</i><i>数字时间</i></div>
+      <div class="links"><a href="com.orbit.watch.dark.release.1.0.0.rpk">下载 rpk（60 KB）</a></div>
+      <div class="spec">设计基准 216×257 · 设备 vivo WATCH GT2</div>
+    </div>
+  </div>
 
-      <article class="card">
-        <a class="thumb" href="faces/orbit-dark/preview.html" target="_blank">
-          <img src="faces/orbit-dark/preview.png" alt="暗夜轨道">
-        </a>
-        <div class="meta">
-          <h2>暗夜轨道<span>Orbit Dark</span></h2>
-          <p>近黑径向渐变底盘，细密分钟刻度 + 12/3/6/9 重刻度；银色时/分针，青色秒针与轴心点缀。下方半透明衬底承载数字时间与日期。</p>
-          <div class="tags"><i>指针表盘</i><i>极简</i><i>深色</i></div>
-          <div class="links">
-            <a href="faces/orbit-dark/preview.html" target="_blank">▶ 交互预览</a>
-            <a href="faces/orbit-dark/preview.png" target="_blank">下载预览图</a>
-          </div>
-        </div>
-      </article>
+  <div class="card">
+    <div class="thumb"><img src="faces/final-gold-preview.png" alt="深海金砂"></div>
+    <div class="meta">
+      <h2>深海金砂 <span>ORBIT GOLD</span></h2>
+      <p>深海蓝底配香槟金指针与刻度，夜间沉稳、白天贵气。与暗夜轨道同布局，气质完全不同。</p>
+      <div class="tags"><i>金色</i><i>指针表盘</i><i>商务</i></div>
+      <div class="links"><a href="com.orbit.watch.gold.release.1.0.0.rpk">下载 rpk（73 KB）</a></div>
+      <div class="spec">设计基准 216×257 · 设备 vivo WATCH GT2</div>
+    </div>
+  </div>
 
-      <article class="card">
-        <a class="thumb" href="faces/orbit-gold/preview.html" target="_blank">
-          <img src="faces/orbit-gold/preview.png" alt="深海金砂">
-        </a>
-        <div class="meta">
-          <h2>深海金砂<span>Orbit Gold</span></h2>
-          <p>深海军蓝底盘配香槟金指针与刻度，夜光质感；金色轴心与外圈描边形成层次，适合商务场景。</p>
-          <div class="tags"><i>指针表盘</i><i>商务</i><i>金色</i></div>
-          <div class="links">
-            <a href="faces/orbit-gold/preview.html" target="_blank">▶ 交互预览</a>
-            <a href="faces/orbit-gold/preview.png" target="_blank">下载预览图</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <a class="thumb" href="faces/orbit-mono/preview.html" target="_blank">
-          <img src="faces/orbit-mono/preview.png" alt="素白刻度">
-        </a>
-        <div class="meta">
-          <h2>素白刻度<span>Orbit Mono</span></h2>
-          <p>浅色底盘配深色指针，强光下可读性最好；白色衬底 + 深灰日期，适合日常通勤。</p>
-          <div class="tags"><i>指针表盘</i><i>浅色</i><i>高可读</i></div>
-          <div class="links">
-            <a href="faces/orbit-mono/preview.html" target="_blank">▶ 交互预览</a>
-            <a href="faces/orbit-mono/preview.png" target="_blank">下载预览图</a>
-          </div>
-        </div>
-      </article>
-
+  <div class="card">
+    <div class="thumb"><img src="faces/final-mono-preview.png" alt="素白刻度"></div>
+    <div class="meta">
+      <h2>素白刻度 <span>ORBIT MONO</span></h2>
+      <p>素白底 + 纯黑指针，极简主义。强光下最清晰，适合白天通勤与户外。</p>
+      <div class="tags"><i>浅色</i><i>极简</i><i>高对比</i></div>
+      <div class="links"><a href="com.orbit.watch.mono.release.1.0.0.rpk">下载 rpk（70 KB）</a></div>
+      <div class="spec">设计基准 216×257 · 设备 vivo WATCH GT2</div>
+    </div>
+  </div>
 </main>
+
 <footer>
-  每款表盘均为独立 BlueOS 工程（manifest.json + index.ux + 图片资源），已通过官方工具链编译为 rpk。<br>
-  设计基准宽度 <code>466</code>，包名 <code>com.orbit.watch</code>。
+  Orbit · 蓝河表盘开发 · 生成器与工程均为自研<br>
+  技术栈：BlueOS UX 单文件组件 · Python + Pillow 程序化图形 · blueos-pack 命令行构建
 </footer>
 </body>
 </html>
